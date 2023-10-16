@@ -1,9 +1,9 @@
-#include "shell.h"
+#include "shell_tsou.h"
 
 /**
- * free_recurrent_data - free the fields needed each loop
- * @data: struct of the program's data
- * Return: Nothing
+ * free_recurrent_data - free tsou fields needed each loop
+ * @data: struct of tsou program's data
+ * Return: zerooh
  */
 void free_recurrent_data(data_of_program *data)
 {
@@ -20,9 +20,9 @@ void free_recurrent_data(data_of_program *data)
 }
 
 /**
- * free_all_data - free all field of the data
- * @data: struct of the program's data
- * Return: Nothing
+ * free_all_data - freeall_field of ze data
+ * @data: structure of tsou program's data
+ * Return: Zerooh
  */
 void free_all_data(data_of_program *data)
 {
@@ -37,10 +37,10 @@ void free_all_data(data_of_program *data)
 }
 
 /**
- * free_array_of_pointers - frees each pointer of an array of pointers and the
- * array too
- * @array: array of pointers
- * Return: nothing
+ * free_array_of_pointers - frees each pointer_array of pointers_and ze
+ * array of tsou
+ * @array: array_of-pointers
+ * Return: zerooh
  */
 void free_array_of_pointers(char **array)
 {

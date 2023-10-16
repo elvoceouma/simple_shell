@@ -1,20 +1,20 @@
-#include "shell.h"
+#include "shell_tsou.h"
 
 /**
- * builtin_exit - exit of the program with the status
- * @data: struct for the program's data
- * Return: zero if sucess, or other number if its declared in the arguments
+ * builtin_exit - exits tsou program with the status
+ * @data: structure for the tsou  program's data
+ * Return: zero on  success, or other no if its declared in tsou arguments
  */
 int builtin_exit(data_of_program *data)
 {
 	int i;
 
 	if (data->tokens[1] != NULL)
-	{/*if exists arg for exit, check if is a number*/
+	{
 		for (i = 0; data->tokens[1][i]; i++)
 			if ((data->tokens[1][i] < '0' || data->tokens[1][i] > '9')
 				&& data->tokens[1][i] != '+')
-			{/*if is not a number*/
+			{
 				errno = 2;
 				return (2);
 			}
@@ -25,9 +25,9 @@ int builtin_exit(data_of_program *data)
 }
 
 /**
- * builtin_cd - change the current directory
- * @data: struct for the program's data
- * Return: zero if sucess, or other number if its declared in the arguments
+ * builtin_cd - change the current directory in tsou shell
+ * @data: struct for the tsou program's data
+ * Return: zero if sucess, or other number if its declared in tsou arguments
  */
 int builtin_cd(data_of_program *data)
 {
@@ -63,10 +63,10 @@ int builtin_cd(data_of_program *data)
 }
 
 /**
- * set_work_directory - set the work directory
- * @data: struct for the program's data
- * @new_dir: path to be set as work directory
- * Return: zero if sucess, or other number if its declared in the arguments
+ * set_work_directory - set the work directory in tsou shell
+ * @data: struct for the tsou program's data
+ * @new_dir: path to be set as work_directory in shell
+ * Return: zero if sucess, or other num if its declared in tsou arguments
  */
 int set_work_directory(data_of_program *data, char *new_dir)
 {
@@ -90,9 +90,9 @@ int set_work_directory(data_of_program *data, char *new_dir)
 }
 
 /**
- * builtin_help - shows the environment where the shell runs
- * @data: struct for the program's data
- * Return: zero if sucess, or other number if its declared in the arguments
+ * builtin_help - environment where tsou shell runs
+ * @data: struct for tsou program's data
+ * Return: zero if sucess, or other num if its declared in tsou arguments
  */
 int builtin_help(data_of_program *data)
 {
@@ -101,7 +101,6 @@ int builtin_help(data_of_program *data)
 
 	mensajes[0] = HELP_MSG;
 
-	/* validate args */
 	if (data->tokens[1] == NULL)
 	{
 		_print(mensajes[0] + 6);
@@ -128,27 +127,25 @@ int builtin_help(data_of_program *data)
 			return (1);
 		}
 	}
-	/*if there is no match, print error and return -1 */
 	errno = EINVAL;
 	perror(data->command_name);
 	return (0);
 }
 
 /**
- * builtin_alias - add, remove or show aliases
- * @data: struct for the program's data
- * Return: zero if sucess, or other number if its declared in the arguments
+ * builtin_alias - add, remove or shows tsou aliases
+ * @data: structure for tsou program's data
+ * Return: zero if sucess, or other num if its declared in tsou arguments
  */
 int builtin_alias(data_of_program *data)
 {
 	int i = 0;
 
-	/* if there are no arguments, print all environment */
 	if (data->tokens[1] == NULL)
 		return (print_alias(data, NULL));
 
 	while (data->tokens[++i])
-	{/* if there are arguments, set or print each env variable*/
+	{
 		if (count_characters(data->tokens[i], "="))
 			set_alias(data->tokens[i], data);
 		else

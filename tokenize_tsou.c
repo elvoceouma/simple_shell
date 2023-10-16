@@ -1,8 +1,8 @@
-#include "shell.h"
+#include "shell_tsou.h"
 /**
- * tokenize - this function separate the string using a designed delimiter
- * @data: a pointer to the program's data
- * Return: an array of the different parts of the string
+ * tokenize - separate tsou string using a designed delimiter
+ * @data: a pointer to sou program's data
+ * Return: an array of tsou  different parts of the stringz
  */
 void tokenize(data_of_program *data)
 {

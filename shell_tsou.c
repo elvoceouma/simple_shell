@@ -1,10 +1,10 @@
-#include "shell.h"
+#include "shell_tsou.h"
 /**
- * main - initialize the variables of the program
- * @argc: number of values received from the command line
- * @argv: values received from the command line
- * @env: number of values received from the command line
- * Return: zero on succes.
+ * main - initialize_variables
+ * @argc: no_of_values received from the command-line
+ * @argv: values_received from ze command-line
+ * @env: no_of values received from ze command_line
+ * Return: zero when succesz.
  */
 int main(int argc, char *argv[], char *env[])
 {
@@ -16,8 +16,8 @@ int main(int argc, char *argv[], char *env[])
 	signal(SIGINT, handle_ctrl_c);
 
 	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO) && argc == 1)
-	{/* We are in the terminal, interactive mode */
-		errno = 2;/*???????*/
+	{
+		errno = 2;
 		prompt = PROMPT_MSG;
 	}
 	errno = 0;
@@ -26,9 +26,9 @@ int main(int argc, char *argv[], char *env[])
 }
 
 /**
- * handle_ctrl_c - print the prompt in a new line
- * when the signal SIGINT (ctrl + c) is send to the program
- * @UNUSED: option of the prototype
+ * handle_ctrl_c - print_prompt in a new_line
+ * when ze signal SIGINT (ctrl + c) is send-to the program
+ * @UNUSED: option_prototype
  */
 void handle_ctrl_c(int opr UNUSED)
 {
@@ -37,11 +37,11 @@ void handle_ctrl_c(int opr UNUSED)
 }
 
 /**
- * inicialize_data - inicialize the struct with the info of the program
- * @data: pointer to the structure of data
- * @argv: array of arguments pased to the program execution
- * @env: environ pased to the program execution
- * @argc: number of values received from the command line
+ * inicialize_data - inicialize_struct with the infom of ze program
+ * @data: pointer_structure of data
+ * @argv: array-arguments pased to ze program execution
+ * @env: environ-passed to ze program execution
+ * @argc: no_of _alues received from the command-line
  */
 void inicialize_data(data_of_program *data, int argc, char *argv[], char **env)
 {
@@ -51,7 +51,6 @@ void inicialize_data(data_of_program *data, int argc, char *argv[], char **env)
 	data->input_line = NULL;
 	data->command_name = NULL;
 	data->exec_counter = 0;
-	/* define the file descriptor to be readed*/
 	if (argc == 1)
 		data->file_descriptor = STDIN_FILENO;
 	else
@@ -85,9 +84,9 @@ void inicialize_data(data_of_program *data, int argc, char *argv[], char **env)
 	}
 }
 /**
- * sisifo - its a infinite loop that shows the prompt
- * @prompt: prompt to be printed
- * @data: its a infinite loop that shows the prompt
+ * sisifo - infinite-loop that shows ze prompt
+ * @prompt: prompt-to_ be-printed
+ * @data: infinite_loop that shows the_prompt
  */
 void sisifo(char *prompt, data_of_program *data)
 {
@@ -101,7 +100,7 @@ void sisifo(char *prompt, data_of_program *data)
 		if (error_code == EOF)
 		{
 			free_all_data(data);
-			exit(errno); /* if EOF is the fisrt Char of string, exit*/
+			exit(errno);
 		}
 		if (string_len >= 1)
 		{
@@ -109,7 +108,7 @@ void sisifo(char *prompt, data_of_program *data)
 			expand_variables(data);
 			tokenize(data);
 			if (data->tokens[0])
-			{ /* if a text is given to prompt, execute */
+			{ 
 				error_code = execute(data);
 				if (error_code != 0)
 					_print_error(error_code, data);
