@@ -1,12 +1,11 @@
-#include "shell.h"
+#include "shell_tsou.h"
 
 /**
- * long_to_string - converts a number to a string.
- * @number: number to be converten in an string.
- * @string: buffer to save the number as string.
- * @base: base to convert number
- *
- * Return: Nothing.
+ * long_to_string - converts-number2string.
+ * @number: number2b_converten_2_string.
+ * @string: buffer to save tsou num-as_string.
+ * @base: base to convert numz
+ * Return: Nul/zerooh.
  */
 void long_to_string(long number, char *string, int base)
 {
@@ -37,16 +36,15 @@ void long_to_string(long number, char *string, int base)
 
 
 /**
- * _atoi - convert a string to an integer.
- *
- * @s: pointer to str origen.
- * Return: int of string or 0.
+ * _atoi - convert_string_2_integer.
+ * @s: pointer to str_original.
+ * Return: int_string or/ 0.
  */
 int _atoi(char *s)
 {
 	int sign = 1;
 	unsigned int number = 0;
-	/*1- analisys sign*/
+
 	while (!('0' <= *s && *s <= '9') && *s != '\0')
 	{
 		if (*s == '-')
@@ -56,7 +54,6 @@ int _atoi(char *s)
 		s++;
 	}
 
-	/*2 - extract the number */
 	while ('0' <= *s && *s <= '9' && *s != '\0')
 	{
 
@@ -65,13 +62,11 @@ int _atoi(char *s)
 	}
 	return (number * sign);
 }
-
 /**
- * count_characters - count the coincidences of character in string.
- *
- * @string: pointer to str origen.
- * @character: string with  chars to be counted
- * Return: int of string or 0.
+ * count_characters - countscharacterz.in_string.
+ * @string: pointer-2-string' original.
+ * @character: string with.charz to be counted
+ * Return: int of stringto return or/ 0.
  */
 int count_characters(char *string, char *character)
 {

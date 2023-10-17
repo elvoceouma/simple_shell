@@ -1,20 +1,20 @@
-#include "shell.h"
+#include "shell_tsou.h"
 
 /**
- * _print - writes a array of chars in the standar output
- * @string: pointer to the array of chars
- * Return: the number of bytes writed or .
- * On error, -1 is returned, and errno is set appropriately.
+ * _print - writes a array of chars in the std_output
+ * @string: pointer to tsou array_of-characters
+ * Return: the no_of-bytes writed or .
+ * On error, -1 is returned, and errer_number set.
  */
 int _print(char *string)
 {
 	return (write(STDOUT_FILENO, string, str_length(string)));
 }
 /**
- * _printe - writes a array of chars in the standar error
- * @string: pointer to the array of chars
- * Return: the number of bytes writed or .
- * On error, -1 is returned, and errno is set appropriately.
+ * _printe - writes a array.of_characters in the std-error
+ * @string: pointer to tsou array of chars
+ * Return: the no_of-bytes writed or made
+ * On error, -1 brought back, and errorno is set.
  */
 int _printe(char *string)
 {
@@ -22,11 +22,11 @@ int _printe(char *string)
 }
 
 /**
- * _print_error - writes a array of chars in the standart error
- * @data: a pointer to the program's data'
- * @errorcode: error code to print
- * Return: the number of bytes writed or .
- * On error, -1 is returned, and errno is set appropriately.
+ * _print_error - writes a array.of_characters in the std-error
+ * @data: a pointer to tsou program's data'
+ * @errorcode: erro_codee printed
+ * Return: the no_of;bytes writed or .
+ * On error, -1 returned of, and erorrno is set.
  */
 int _print_error(int errorcode, data_of_program *data)
 {

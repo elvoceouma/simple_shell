@@ -1,10 +1,10 @@
-#include "shell.h"
+#include "shell_tsou.h"
 
 /**
- * expand_variables - expand variables
- * @data: a pointer to a struct of the program's data
+ * expand_variables - expand tsou variables
+ * @data: a pointer to a struct of tsou program's data
  *
- * Return: nothing, but sets errno.
+ * Return: notting, but sets error_no.
  */
 void expand_variables(data_of_program *data)
 {
@@ -51,10 +51,10 @@ void expand_variables(data_of_program *data)
 }
 
 /**
- * expand_alias - expans aliases
- * @data: a pointer to a struct of the program's data
+ * expand_alias - expands tsou  aliases
+ * @data: a pointer to a struct of tsou program's data
  *
- * Return: nothing, but sets errno.
+ * Return: nothing at al, but sets errer_no.
  */
 void expand_alias(data_of_program *data)
 {
@@ -93,10 +93,10 @@ void expand_alias(data_of_program *data)
 }
 
 /**
- * buffer_add - append string at end of the buffer
- * @buffer: buffer to be filled
- * @str_to_add: string to be copied in the buffer
- * Return: nothing, but sets errno.
+ * buffer_add - append string at end of tsou buffer
+ * @buffer: Tsou buffer
+ * @str_to_add: string to be copied in tsou buffer
+ * Return: void, but sets error_no.
  */
 int buffer_add(char *buffer, char *str_to_add)
 {
