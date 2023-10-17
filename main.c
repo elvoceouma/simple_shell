@@ -1,11 +1,11 @@
-#include "shell_tsou.h"
+#include "shell.h"
 
 /**
- * main - entry poit
- * @ac: arg cont
- * @av: ars-g vector
+ * main - entry point
+ * @ac: arg count
+ * @av: arg vector
  *
- * Return: 0 when-success, 1 if-error
+ * Return: 0 on success, 1 on error
  */
 int main(int ac, char **av)
 {
@@ -42,4 +42,3 @@ int main(int ac, char **av)
 	hsh(info, av);
 	return (EXIT_SUCCESS);
 }
-
