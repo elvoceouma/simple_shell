@@ -77,7 +77,7 @@ int str_compare(char *string1, char *string2, int number)
 		}
 		return (1);
 	}
-	else 
+	else
 	{
 		for (iterator = 0; iterator < number ; iterator++)
 		{

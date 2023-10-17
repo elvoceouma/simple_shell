@@ -108,7 +108,7 @@ void sisifo(char *prompt, data_of_program *data)
 			expand_variables(data);
 			tokenize(data);
 			if (data->tokens[0])
-			{ 
+			{
 				error_code = execute(data);
 				if (error_code != 0)
 					_print_error(error_code, data);

@@ -4,7 +4,7 @@
  * print_alias - add, remove-shows tsou  aliases
  * @data: struct for the tsou program's data
  * @alias: name of the tsou  alias to be printed
- * Return: zero on success, or other number if its declared in the tsou arguments
+ * Return: zero on success,other number if declared in the tsou arguments
  */
 int print_alias(data_of_program *data, char *alias)
 {
@@ -68,7 +68,7 @@ char *get_alias(data_of_program *data, char *name)
  * set_alias - add, or override tsou alias
  * @alias_string: tsou alias to be seted in the form (name='value')
  * @data: structure_of_ze program's data
- * Return: zero if sucess, or other number if its declared in the tsou arguments
+ * Return: zero if sucess, other  number if declared in the tsou arguments
  */
 int set_alias(char *alias_string, data_of_program *data)
 {

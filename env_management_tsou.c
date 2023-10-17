@@ -32,7 +32,7 @@ char *env_get_key(char *key, data_of_program *data)
  * @key: name of tsou variable to set
  * @value: new tsou value
  * @data: struct of tsou program's data
- * Return: 1 if when parameters are NULL, 2 if there is an error_or 0 if sucess.
+ * Return: 1 if NULL, 2 if there is an error_or 0 if sucess.
  */
 
 int env_set_key(char *key, char *value, data_of_program *data)

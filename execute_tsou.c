@@ -20,9 +20,9 @@ int execute(data_of_program *data)
 	}
 	else
 	{
-		pidd = fork(); 
+		pidd = fork();
 		if (pidd == -1)
-		{ 
+		{
 			perror(data->command_name);
 			exit(EXIT_FAILURE);
 		}

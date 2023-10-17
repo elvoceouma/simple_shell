@@ -2,16 +2,16 @@
 #define SHELL_H
 
 #include <stdio.h>
-#include <unistd.h> 
+#include <unistd.h>
 #include <stdlib.h>
-#include <string.h> 
+#include <string.h>
 #include <stddef.h>
-#include <errno.h> 
-#include <sys/types.h> 
+#include <errno.h>
+#include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <signal.h>
-#include <fcntl.h> 
+#include <fcntl.h>
 
 #include "macros_tsou.h"
 
@@ -118,7 +118,7 @@ int builtin_set_env(data_of_program *data);
 int builtin_unset_env(data_of_program *data);
 
 
-/************** HELPERS FOR TSOU ENVIRONMENT VARIABLES MANAGEMENT **************/
+/*HELPERS FOR TSOU ENVIRONMENT VARIABLES MANAGEMENT */
 
 
 /* env_management_tsou.c */

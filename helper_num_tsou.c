@@ -44,6 +44,7 @@ int _atoi(char *s)
 {
 	int sign = 1;
 	unsigned int number = 0;
+
 	while (!('0' <= *s && *s <= '9') && *s != '\0')
 	{
 		if (*s == '-')
