@@ -1,4 +1,4 @@
-#include "shell.h"
+clude "shell.h"
 
 /**
  **_strncpy - copies a string
