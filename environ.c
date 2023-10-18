@@ -1,4 +1,4 @@
-include "shell.h"
+#include "shell.h"
 
 /**
  * _myenv - prints the current environment
@@ -61,15 +61,15 @@ int _mysetenv(info_t *info)
  */
 int _myunsetenv(info_t *info)
 {
-	int i;
+	int k;
 
 	if (info->argc == 1)
 	{
 		_eputs("Too few arguements.\n");
 		return (1);
 	}
-	for (i = 1; i <= info->argc; i++)
-		_unsetenv(info, info->argv[i]);
+	for (k = 1; k <= info->argc; k++)
+		_unsetenv(info, info->argv[k]);
 
 	return (0);
 }
@@ -83,10 +83,10 @@ int _myunsetenv(info_t *info)
 int populate_env_list(info_t *info)
 {
 	list_t *node = NULL;
-	size_t i;
+	size_t k;
 
-	for (i = 0; environ[i]; i++)
-		add_node_end(&node, environ[i], 0);
+	for (k = 0; environ[k]; i++)
+		add_node_end(&node, environ[k], 0);
 	info->env = node;
 	return (0);
 }
